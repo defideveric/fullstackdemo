@@ -1,13 +1,13 @@
 <?php
 class DbConnect {
-    private $host = 'localhost';
+    private $server = 'localhost';
     private $dbName = 'react-crud';
     private $user = 'root';
     private $pass = '';
 
     public function connect() {
         try {
-            $conn = new PDO('mysql:host=' . $this->host . '; dbname=' . $this->dbName, $this->user, $this->pass);
+            $conn = new PDO('mysql:host=' . $this->server . '; dbname=' . $this->dbName, $this->user, $this->pass);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
         } catch( PDOException $e) {
@@ -15,4 +15,5 @@ class DbConnect {
         }
     }
 }
+
 ?>
